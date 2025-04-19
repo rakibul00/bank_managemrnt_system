@@ -14,6 +14,9 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+import os
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',')
+CSRF_TRUSTED_ORIGINS=https://bank-managemrnt-system.onrender.com
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +28,9 @@ SECRET_KEY = 'django-insecure-*p4#3n$&4($^#xomcfs&m7m*t_9hid%ajvl1qals^d6(t=%#2@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bank-managemrnt-system.onrender.com']
+
+
 
 
 # Application definition
